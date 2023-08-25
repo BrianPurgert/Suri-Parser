@@ -2,7 +2,6 @@
 source "https://rubygems.org"
 gem 'roda'
 gem 'rake'
-gem 'rack'
 gem 'puma'
 gem 'bundler'
 gem 'nokogiri'

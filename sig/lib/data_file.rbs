@@ -1,0 +1,84 @@
+# Heuristic HTML Parser
+DELETE_FROM_DATA_ARRAY: ::Array[" " | ""]
+
+class DataFile
+
+	def initialize: (String html, String url, ?String? content_type) -> void
+
+  def elapsed: () -> untyped
+
+  def links: () -> untyped
+
+  # @param [Object] attributes
+  def having: (untyped attributes) -> untyped
+
+  # @return [Float]
+  def `⏱`: () -> untyped
+
+  def parse_xp_node: (untyped xp_node) -> untyped
+
+  def decode: (untyped encoded) -> untyped
+
+  def extract_uri_with_params: () -> untyped
+
+  def add_debug: (untyped info) -> untyped
+
+  # @param [Addressable::URI] gsa_uri
+  def unique_value_dom_grouping: (untyped gsa_uri) -> untyped
+
+  def uri_unique_data_capture: (untyped gsa_uri) -> untyped
+
+  def extract_table_transposed: () -> untyped
+
+  def extract_each_line: () -> untyped
+
+  def as_column_name: (untyped key_string) -> untyped
+
+  def to_column: (untyped dirty_string) -> untyped
+
+  def soft_clean: (untyped dirty_string) -> untyped
+
+  def collect_between: (untyped first, untyped last) -> untyped
+
+  def collect_comments: () -> untyped
+
+  def concat: (untyped datafile) -> untyped
+
+  def to_a: () -> Array[untyped]
+
+  def to_e: () -> untyped
+
+  def to_h: () -> untyped
+
+  def promote: (untyped selector) -> untyped
+
+  def unwrap: (untyped selector) -> untyped
+
+  def children_text_array: (untyped selector) -> untyped
+
+  def replace_wrap: (untyped selector, ?::Array[untyped] delimiter) -> untyped
+
+  def add_data_array: (?untyped data_array) -> untyped
+
+  def clean_data_array: () -> untyped
+
+  def count: (untyped attribute) -> ::String
+
+  def countp: (untyped attribute) -> ::String
+
+  def kv_xpath: (untyped k, untyped v) -> untyped
+
+  def clean_nodes: () -> untyped
+
+  def clean_attributes: () -> untyped
+
+  def collect_form_attributes: () -> untyped
+
+  def extract_src: () -> untyped
+
+  def from_json: (untyped json) -> untyped
+
+  def print_header: (untyped heading) -> untyped
+
+  def xml: (untyped html) -> untyped
+end
