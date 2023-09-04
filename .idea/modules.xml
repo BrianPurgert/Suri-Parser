@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../monday_scripts/.idea/monday_scripts.iml" filepath="$PROJECT_DIR$/../monday_scripts/.idea/monday_scripts.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/roda-simple.iml" filepath="$PROJECT_DIR$/.idea/roda-simple.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Projects/turingsinterface/.idea/turingsinterface.iml" filepath="$PROJECT_DIR$/../../Projects/turingsinterface/.idea/turingsinterface.iml" />
     </modules>
   </component>
 </project>

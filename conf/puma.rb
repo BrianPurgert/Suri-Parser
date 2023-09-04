@@ -14,7 +14,7 @@ app_dir = @dir
 # Specify path to socket puma listens to,
 # we will use this in our nginx.conf later
 # bind "#{@dir}tmp/sockets/puma.sock", :backlog => 64
-port 3000
+port 80
 
 # Set process id path
 pidfile "#{@dir}tmp/pids/puma.pid"

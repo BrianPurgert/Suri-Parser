@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html >
 
-<head>
-	<script type="importmap">
+<head >
+  <script type = "importmap" >
   {
     "imports": {
       "vue": "https://unpkg.com/vue@3.3.4/dist/vue.esm-browser.js",
       "vue/server-renderer": "https://unpkg.com/@vue/server-renderer@3.3.4/dist/server-renderer.esm-browser.js"
     }
   }
-  </script>
-</head>
+
+  </script >
+</head >
 
 <!--
 This example fetches latest Vue.js commits data from GitHub’s API and displays them as a list.
 You can switch between the two branches.
 -->
 
-<script type="module">
+<script type = "module" >
 	import { createApp, ref, watchEffect } from 'vue'
 
 	const API_URL = `/api?url=`
@@ -31,7 +32,7 @@ You can switch between the two branches.
 			watchEffect(async () => {
 				// this effect will run immediately and then
 				// re-run whenever currentBranch.value changes
-				const url = `${API_URL}${currentBranch.value}`
+				const url = `${ API_URL }${ currentBranch.value }`
 				commits.value = await (await fetch(url)).json()
 			})
 
@@ -53,21 +54,21 @@ You can switch between the two branches.
 			}
 		}
 	}).mount('#app')
-</script>
+</script >
 
-<div id="app">
-	<h1>Latest Vue Core Commits</h1>
-	<template v-for="branch in branches">
-		<input type="text"
-					 :id="branch"
-					 :value="branch"
-					 name="branch"
-					 v-model="currentBranch">
-		<label :for="branch">{{ branch }}</label>
-	</template>
+<div id = "app" >
 
-
-</div>
+  <template v-for = "branch in branches" >
+    <input type = "text"
+      :id = "branch"
+      :value = "branch"
+      name = "branch"
+      v-model = "currentBranch" >
+    <label :for = "branch" >{{ branch }}</label >
+  </template >
 
 
-</html>
+</div >
+
+
+</html >

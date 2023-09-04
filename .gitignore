@@ -2,3 +2,6 @@
 Gemfile.lock
 
 .vscode
+!/Gemfile.lock
+/log/
+/tmp/pids/

@@ -1,14 +1,12 @@
-
 desc 'Run the server'
 task :run, [:port] do |_, args|
 	puts 'Starting server'
-	args.with_defaults(port: 3000)
+	args.with_defaults(port: 80)
 	sh "rackup config.ru -p #{args.port}"
 end
 
 # Set :run as the default task
-task :default => :run
-
+task default: :run
 
 desc 'Start the puma server'
 task :puma do |_|

@@ -19,6 +19,7 @@ class DataFile
 		@data_array = [{ url: @url.to_s, page: @url.basename }]
 		@dom_uri    = {}
 		@debug      = []
+		@xpaths     = []
 		xml(html)
 	end
 
@@ -28,17 +29,19 @@ class DataFile
 
 	def links
 		arr = []
-		search(['?']).each do |element| element.values.each do |att| arr << att.to_s
-		end
+		search(['?']).each do |element|
+			element.values.each do |att|
+				arr << att.to_s
+			end
 		end
 		arr
 	end
 
-	# @param [Object] attributes
 	def having(attributes)
 		puts "having: #{attributes}".colorize(:red)
 		xpath = './/@*'
-		attributes.each do |attribute| xpath = xpath + "[contains(., '#{attribute}')]"
+		attributes.each do |attribute|
+			xpath = xpath + "[contains(., '#{attribute}')]"
 		end
 		@doc.xpath(xpath)
 	end
@@ -47,8 +50,9 @@ class DataFile
 	def ⏱
 		if @r0.nil?
 			@r0 = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-		else puts "stopwatch: #{Process.clock_gettime(Process::CLOCK_MONOTONIC) - @r0}s"
-		@r0 = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+		else
+			puts "stopwatch: #{Process.clock_gettime(Process::CLOCK_MONOTONIC) - @r0}s"
+			@r0 = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 		end
 	end
 
@@ -56,19 +60,21 @@ class DataFile
 		urls = xp_node.xpath('.//@href').map { |a| a.to_s }.compact.uniq.sort!
 		urls = urls.first unless urls.size > 1
 		out  = { url: urls }
-		xp_node.traverse do |node| if node.text?
-			                           text = node.text.strip
-			                           unless text.empty?
-				                           out.deep_merge({ content: [text] }, merge_hash_arrays: true)
-			                           end
-		                           end
-		xp_node.values.each do |attribute_value| begin
-			                                         attribute_uri = Addressable::URI.parse(attribute_value)
-			                                         out.deep_merge(attribute_uri.query_values, merge_hash_arrays: true)
-		                                         rescue
-			                                         out = out.merge(attribute_value => 'ERROR')
-		                                         end
-		end
+		xp_node.traverse do |node|
+			if node.text?
+				text = node.text.strip
+				unless text.empty?
+					out.deep_merge({ content: [text] }, merge_hash_arrays: true)
+				end
+			end
+			xp_node.values.each do |attribute_value|
+				begin
+					attribute_uri = Addressable::URI.parse(attribute_value)
+					out.deep_merge(attribute_uri.query_values, merge_hash_arrays: true)
+				rescue
+					out = out.merge(attribute_value => 'ERROR')
+				end
+			end
 		end
 		out
 	end
@@ -79,32 +85,36 @@ class DataFile
 
 	def extract_uri_with_params
 		# get all url's containing a query string with field-value pairs
-		base_uris = @doc.xpath("//body//@href[contains(.,'?') and contains(.,'=')]").map do |link| (link.text.include? "'") ? nil : link.text
+		base_uris = @doc.xpath("//body//@href[contains(.,'?') and contains(.,'=')]").map do |link|
+			(link.text.include? "'") ? nil : link.text
 		end.uniq.compact
 		add_debug(base_uris)
 		queries = {}
-		base_uris.each do |link| dirty_q = link.split('?').last
-		dirty_h                          = {}
-		dirty_q.split('&').each { |kv_str| dirty_h[kv_str.split('=').first] = kv_str.split('=').last }
-		import_q = dirty_h
-		queries.update(import_q) { |k, v1, v2| Array(v1) | Array(v2) }
+		base_uris.each do |link|
+			dirty_q = link.split('?').last
+			dirty_h = {}
+			dirty_q.split('&').each { |kv_str| dirty_h[kv_str.split('=').first] = kv_str.split('=').last }
+			import_q = dirty_h
+			queries.update(import_q) { |k, v1, v2| Array(v1) | Array(v2) }
 		end
 		ap queries
-		add_debug(queries)
+		@xpaths           = queries
 		@xpath_data_queue = Queue.new
 		xpath_threads     = []
 		puts "queries: #{ queries.size }"
-		queries.each_pair do |k, a| xpath_threads << Thread.new(@doc) { |doc_copy| a = (a.is_a? Array) ? a : Array(a)
-		a.each do |v| xp = kv_xpath(k, v)
-		xp_nodes         = doc_copy.xpath(xp)
-		unless xp_nodes.nil?
-			xp_nodes.each { |xp_node| pxn = parse_xp_node(xp_node)
-			kv_node                       = { k => { decode(v) => pxn } }
-			@xpath_data_queue << kv_node
+		queries.each_pair do |k, a|
+			xpath_threads << Thread.new(@doc) { |doc_copy| a = (a.is_a? Array) ? a : Array(a)
+			a.each do |v|
+				xp       = kv_xpath(k, v)
+				xp_nodes = doc_copy.xpath(xp)
+				unless xp_nodes.nil?
+					xp_nodes.each { |xp_node| pxn = parse_xp_node(xp_node)
+					kv_node                       = { k => { decode(v) => pxn } }
+					@xpath_data_queue << kv_node
+					}
+				end
+			end
 			}
-		end
-		end
-		}
 		end
 		xpath_threads.each { |thread| thread.join }
 		until @xpath_data_queue.empty?
@@ -117,38 +127,38 @@ class DataFile
 		@debug << info
 	end
 
-	# @param [Addressable::URI] gsa_uri
-	def unique_value_dom_grouping(gsa_uri)
-		print_header 'unique_value_dom_grouping'
-		inner_xquery              = gsa_uri.queries(false).map { |url_key, url_value| url_value = encode(url_value)
-		".//*[ count(./@href[contains(.,'#{url_key}')]) = count(.//@href[contains(.,'#{url_value}')]) and count(parent::*//@href[contains(.,'#{url_key}')]) > count(parent::*//@*[contains(.,'#{url_value}')]) ]"
-		}.join(' and ')
-		xquery_uri_unique_parents = ".//*[#{inner_xquery}]"
-		add_debug([xquery_uri_unique_parents, @doc.xpath(xquery_uri_unique_parents).count])
-		@doc.xpath(xquery_uri_unique_parents).each { |uri_unique_parent| add_debug({ "#{gsa_uri.queries.to_s}" => uri_unique_parent.xpath('.//text()').text.strip.split(/\s{2,}/)
-		                                                                           })
-		}
-	end
+	# def unique_value_dom_grouping(gsa_uri)
+	#
+	# 	inner_xquery              = gsa_uri.queries(false).map { |url_key, url_value| url_value = encode(url_value)
+	# 	".//*[ count(./@href[contains(.,'#{url_key}')]) = count(.//@href[contains(.,'#{url_value}')]) and count(parent::*//@href[contains(.,'#{url_key}')]) > count(parent::*//@*[contains(.,'#{url_value}')]) ]"
+	# 	}.join(' and ')
+	# 	xquery_uri_unique_parents = ".//*[#{inner_xquery}]"
+	# 	add_debug([xquery_uri_unique_parents, @doc.xpath(xquery_uri_unique_parents).count])
+	# 	@doc.xpath(xquery_uri_unique_parents).each { |uri_unique_parent| add_debug({ "#{gsa_uri.queries.to_s}" => uri_unique_parent.xpath('.//text()').text.strip.split(/\s{2,}/)
+	# 	                                                                           })
+	# 	}
+	# end
 
-	def uri_unique_data_capture(gsa_uri)
-		inner_xquery              = gsa_uri.queries(false).map { |url_key, url_value| url_value = encode(url_value)
-		".//*[count(.//@*[contains(.,'#{url_key}=#{url_value}')]) >=1 and count(parent::*//@*[contains(.,'#{url_key}=#{url_value}')]) < count(parent::*//@*[contains(.,'#{url_key}=')]) ]"
-		}.join(' and ')
-		xquery_uri_unique_parents = ".//*[#{inner_xquery}]"
-		add_debug([xquery_uri_unique_parents, @doc.xpath(xquery_uri_unique_parents).count])
-		@doc.xpath(xquery_uri_unique_parents).each { |uri_unique_parent| add_debug({ "#{gsa_uri.queries.to_s}" => uri_unique_parent.xpath('.//text()').text.strip.split(/\s{2,}/) })
-		}
-	end
+	# def uri_unique_data_capture(gsa_uri)
+	# 	inner_xquery              = gsa_uri.queries(false).map { |url_key, url_value| url_value = encode(url_value)
+	# 	".//*[count(.//@*[contains(.,'#{url_key}=#{url_value}')]) >=1 and count(parent::*//@*[contains(.,'#{url_key}=#{url_value}')]) < count(parent::*//@*[contains(.,'#{url_key}=')]) ]"
+	# 	}.join(' and ')
+	# 	xquery_uri_unique_parents = ".//*[#{inner_xquery}]"
+	# 	add_debug([xquery_uri_unique_parents, @doc.xpath(xquery_uri_unique_parents).count])
+	# 	@doc.xpath(xquery_uri_unique_parents).each { |uri_unique_parent| add_debug({ "#{gsa_uri.queries.to_s}" => uri_unique_parent.xpath('.//text()').text.strip.split(/\s{2,}/) })
+	# 	}
+	# end
 
 	def extract_table_transposed
-		@doc.search('//table[count(.//table)=0 and count(.//tr[1]//td)=2 and count(.//tr[last()]//td)=2]//tr[count(td)=2]').each do |row| pair = row.search('td').map { |td| td.text.squeeze(' ').strip }
-		key                                                                                                                                    = to_column(pair[0])
-		unless pair[1].empty? || pair[1] == ' ' || key.nil? || key.empty?
-			key_pair = { key => soft_clean(pair[1]) }
-			ap key_pair
-			@data_array << key_pair
-		end
-		row.replace('')
+		@doc.search('//table[count(.//table)=0 and count(.//tr[1]//td)=2 and count(.//tr[last()]//td)=2]//tr[count(td)=2]').each do |row|
+			pair = row.search('td').map { |td| td.text.squeeze(' ').strip }
+			key  = to_column(pair[0])
+			unless pair[1].empty? || pair[1] == ' ' || key.nil? || key.empty?
+				key_pair = { key => soft_clean(pair[1]) }
+				ap key_pair
+				@data_array << key_pair
+			end
+			row.replace('')
 		end
 	end
 
@@ -156,13 +166,14 @@ class DataFile
 		kv        = {}
 		last_line = ''
 		str_doc   = @doc.to_str
-		str_doc.each_line do |line| line = soft_clean(line)
-		if line
-			if last_line.end_with? ':'
-				kv[to_column(last_line.chomp(':'))] = line
+		str_doc.each_line do |line|
+			line = soft_clean(line)
+			if line
+				if last_line.end_with? ':'
+					kv[to_column(last_line.chomp(':'))] = line
+				end
+				last_line = line
 			end
-			last_line = line
-		end
 		end
 		ap kv
 		@data_array << kv
@@ -200,15 +211,16 @@ class DataFile
 		comments = @doc.xpath('.//body//comment()')
 		cols     = comments.map { |c| to_column(c.text)
 		}
-		comments.each { |c| if c.text.downcase.include? 'end'
-			                    start_i = cols.find_index { |x| x == to_column(c.text.gsub(/(ends?)/i, '')) }
-			                    if start_i
-				                    comment = comments.at(start_i)
-				                    if comment && c
-					                    out << collect_between(comment, c)
-				                    end
-			                    end
-		                    end
+		comments.each { |c|
+			if c.text.downcase.include? 'end'
+				start_i = cols.find_index { |x| x == to_column(c.text.gsub(/(ends?)/i, '')) }
+				if start_i
+					comment = comments.at(start_i)
+					if comment && c
+						out << collect_between(comment, c)
+					end
+				end
+			end
 		}
 		out
 	end
@@ -226,6 +238,8 @@ class DataFile
 	end
 
 	def to_h
+		puts '--------'.colorize(:red)
+		ap @xpaths
 		data_hash = {}
 		@data_array.each { |h| #   :preserve_unmergeables  DEFAULT: false      Set to true to skip any unmergeable elements from source
 			#   :knockout_prefix        DEFAULT: nil        Set to string value to signify prefix which deletes elements from existing element
@@ -293,13 +307,15 @@ class DataFile
 
 	def clean_nodes
 		remove_nodes = ['script', "[type='text/javascript']", "[type='text/css']", 'noscript', 'button', 'link', 'br', '#sectionheader', 'meta', 'style']
-		remove_nodes.each do |selector| @doc.css("#{selector}").remove
+		remove_nodes.each do |selector|
+			@doc.css("#{selector}").remove
 		end
 	end
 
 	def clean_attributes
 		remove_attributes = %w(colspan bgcolor size width height border nowrap align target cellspacing cellpadding width border valign bgcolor style class bordercolor color)
-		remove_attributes.each do |attribute| @doc.xpath(".//@#{attribute}").remove
+		remove_attributes.each do |attribute|
+			@doc.xpath(".//@#{attribute}").remove
 		end
 	end
 
