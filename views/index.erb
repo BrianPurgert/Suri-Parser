@@ -2,73 +2,33 @@
 <html >
 
 <head >
-  <script type = "importmap" >
-  {
-    "imports": {
-      "vue": "https://unpkg.com/vue@3.3.4/dist/vue.esm-browser.js",
-      "vue/server-renderer": "https://unpkg.com/@vue/server-renderer@3.3.4/dist/server-renderer.esm-browser.js"
-    }
+  <link href = "https://cdn.jsdelivr.net/npm/vuetify@3.3.15/dist/vuetify-labs.css" type = 'text/css' >
+  <script type = 'importmap' >
+{
+  "imports": {
+    "vue": "https://cdn.jsdelivr.net/npm/@vue/runtime-dom@3.3.4/dist/runtime-dom.esm-browser.js",
+    "vuetify": "https://cdn.jsdelivr.net/npm/vuetify@3.3.12/dist/vuetify-labs.esm.js",
+    "vue/server-renderer": "https://cdn.jsdelivr.net/npm/@vue/server-renderer@3.3.4/dist/server-renderer.esm-browser.js"
   }
+}
 
   </script >
 </head >
 
-<!--
-This example fetches latest Vue.js commits data from GitHub’s API and displays them as a list.
-You can switch between the two branches.
--->
 
-<script type = "module" >
-	import { createApp, ref, watchEffect } from 'vue'
+<script >
+	import { createVuetify } from 'vuetify'
 
-	const API_URL = `/api?url=`
-	const branches = ['main', 'v2-compat']
-
-	createApp({
-		setup() {
-			const currentBranch = ref(branches[0])
-			const commits = ref(null)
-
-			watchEffect(async () => {
-				// this effect will run immediately and then
-				// re-run whenever currentBranch.value changes
-				const url = `${ API_URL }${ currentBranch.value }`
-				commits.value = await (await fetch(url)).json()
-			})
-
-			function truncate(v) {
-				const newline = v.indexOf('\n')
-				return newline > 0 ? v.slice(0, newline) : v
-			}
-
-			function formatDate(v) {
-				return v.replace(/T|Z/g, ' ')
-			}
-
-			return {
-				branches,
-				currentBranch,
-				commits,
-				truncate,
-				formatDate
-			}
-		}
-	}).mount('#app')
+	export const vuetify = createVuetify({
+		theme: { defaultTheme: 'light' }
+	})
+	const drawer = ref(null)
 </script >
 
-<div id = "app" >
-
-  <template v-for = "branch in branches" >
-    <input type = "text"
-      :id = "branch"
-      :value = "branch"
-      name = "branch"
-      v-model = "currentBranch" >
-    <label :for = "branch" >{{ branch }}</label >
-  </template >
-
-
-</div >
-
+<script >
+	export default {
+		data: () => ({ drawer: null })
+	}
+</script >
 
 </html >

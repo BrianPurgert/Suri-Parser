@@ -5,6 +5,8 @@ require 'nokogiri'
 require_relative 'lib/data_file'
 require_relative 'lib/methods'
 
+SAMPLE_URL = 'https://www.gsaelibrary.gsa.gov/ElibMain/scheduleSummary.do'
+
 class Main < Roda
 
 	plugin :json, serializer: proc { |o| JSON.pretty_generate(o) }
@@ -19,22 +21,36 @@ class Main < Roda
 		end
 
 		r.on 'm' do
-			test_url = r.params['url'].nil? ? 'https://gsaadvantage-test.fas.gsa.gov/advantage/ws/search/advantage_search?q=0:8desktop&db=0&searchType=0' : r.params['url']
+			test_url = r.params['url'].nil? ? SAMPLE_URL : r.params['url']
 			test_url = Addressable::URI.unencode(test_url.tr("+", " "))
-			body     = fetch_body(test_url)
+			url      = Addressable::URI.heuristic_parse(test_url).normalize
+
+			body     = fetch_body(url.to_s)
 			document = Nokogiri.parse(body)
+
+			document.css('a').each do |link|
+				href = link.attribute('href').to_s
+				unless href.empty?
+					link['href'] = url.join(href).to_s
+				end
+			end
+			document.css('img').each do |img|
+				src = img.attribute('src').to_s
+				unless src.empty?
+					img['src'] = url.join(src).to_s
+				end
+			end
 
 			document.to_s
 		end
 
 		r.on 'api' do
-			test_url = r.params['url'].nil? ? 'https://gsaadvantage-test.fas.gsa.gov/advantage/ws/search/advantage_search?q=0:8desktop&db=0&searchType=0' : r.params['url']
+			test_url = r.params['url'].nil? ? SAMPLE_URL : r.params['url']
 			test_url = Addressable::URI.unencode(test_url.tr("+", " "))
-			browser  = Ferrum::Browser.new(browser_options: { 'no-sandbox': nil })
-			browser.go_to(test_url)
-			body     = browser.page.body.to_s
-			datafile = DataFile.new(body, test_url)
-			browser.quit
+			url      = Addressable::URI.heuristic_parse(test_url).normalize.to_s
+			body     = fetch_body(url)
+
+			datafile = DataFile.new(body, url)
 			datafile.to_h
 		end
 

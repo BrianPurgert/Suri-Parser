@@ -44,10 +44,19 @@ def fetch_body(test_url)
 	}
 
 	browser = Ferrum::Browser.new(browser_options: browser_options)
+
 	browser.go_to(test_url)
-	domain = Addressable::URI.parse(test_url).domain
+
+	filename = URI.parse(test_url).hostname.gsub('.', '_')
+	path     = File.expand_path("../..", __FILE__)
 	browser.network.wait_for_idle
-	browser.screenshot(path: "#{test_url.to_s}.png")
+
+	browser.evaluate <<~JS
+	      window.scrollTo({ top: document.documentElement.scrollHeight});
+	JS
+
+	browser.screenshot(full: true, path: "#{path}/screenshots/#{filename}.png")
+
 	body = browser.page.body.to_s
 	browser.quit
 	body

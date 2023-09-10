@@ -29,6 +29,8 @@
     <orderEntry type="library" scope="PROVIDED" name="webrick (v1.8.1, ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.6, ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, ruby-3.2.2) [gem]" level="application" />
+    <orderEntry type="library" name="vuetify" level="application" />
+    <orderEntry type="library" name="@vue/runtime-dom" level="application" />
   </component>
   <component name="RakeTasksCache">
     <option name="myRootTask">

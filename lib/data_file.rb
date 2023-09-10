@@ -16,7 +16,7 @@ class DataFile
 		@time       = Time.now
 		@url        = Addressable::URI.parse(url).normalize
 		@links      = []
-		@data_array = [{ url: @url.to_s, page: @url.basename }]
+		@data_array = [{ url: @url.to_s }]
 		@dom_uri    = {}
 		@debug      = []
 		@xpaths     = []
@@ -48,11 +48,12 @@ class DataFile
 
 	# @return [Float]
 	def ⏱
-		if @r0.nil?
-			@r0 = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+		if @start_time.nil?
+			@start_time = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 		else
-			puts "stopwatch: #{Process.clock_gettime(Process::CLOCK_MONOTONIC) - @r0}s"
-			@r0 = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+			elapsed_time = Process.clock_gettime(Process::CLOCK_MONOTONIC) - @start_time
+			puts "stopwatch: #{elapsed_time}s"
+			@start_time = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 		end
 	end
 
