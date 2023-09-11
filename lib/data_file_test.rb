@@ -2,7 +2,7 @@ require 'ferrum'
 require 'json'
 require_relative 'data_file'
 
-test_url = 'http://192.168.1.9/2017/84/PAGEproductdetaildo-GSIN11000040743233-CVIEWtrue-.html'
+test_url = 'http://192.168.1.9/2017/100/PAGEproductdetaildo-GSIN11000047808129-CVIEWtrue-.html'
 
 browser_options = {
 'no-sandbox'                                         => nil,

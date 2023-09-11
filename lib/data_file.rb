@@ -23,40 +23,6 @@ class DataFile
 		xml(html)
 	end
 
-	def elapsed
-		(@time - Time.now).to_s
-	end
-
-	def links
-		arr = []
-		search(['?']).each do |element|
-			element.values.each do |att|
-				arr << att.to_s
-			end
-		end
-		arr
-	end
-
-	def having(attributes)
-		puts "having: #{attributes}".colorize(:red)
-		xpath = './/@*'
-		attributes.each do |attribute|
-			xpath = xpath + "[contains(., '#{attribute}')]"
-		end
-		@doc.xpath(xpath)
-	end
-
-	# @return [Float]
-	def ⏱
-		if @start_time.nil?
-			@start_time = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-		else
-			elapsed_time = Process.clock_gettime(Process::CLOCK_MONOTONIC) - @start_time
-			puts "stopwatch: #{elapsed_time}s"
-			@start_time = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-		end
-	end
-
 	def parse_xp_node(xp_node)
 		urls = xp_node.xpath('.//@href').map { |a| a.to_s }.compact.uniq.sort!
 		urls = urls.first unless urls.size > 1
@@ -128,58 +94,6 @@ class DataFile
 		@debug << info
 	end
 
-	# def unique_value_dom_grouping(gsa_uri)
-	#
-	# 	inner_xquery              = gsa_uri.queries(false).map { |url_key, url_value| url_value = encode(url_value)
-	# 	".//*[ count(./@href[contains(.,'#{url_key}')]) = count(.//@href[contains(.,'#{url_value}')]) and count(parent::*//@href[contains(.,'#{url_key}')]) > count(parent::*//@*[contains(.,'#{url_value}')]) ]"
-	# 	}.join(' and ')
-	# 	xquery_uri_unique_parents = ".//*[#{inner_xquery}]"
-	# 	add_debug([xquery_uri_unique_parents, @doc.xpath(xquery_uri_unique_parents).count])
-	# 	@doc.xpath(xquery_uri_unique_parents).each { |uri_unique_parent| add_debug({ "#{gsa_uri.queries.to_s}" => uri_unique_parent.xpath('.//text()').text.strip.split(/\s{2,}/)
-	# 	                                                                           })
-	# 	}
-	# end
-
-	# def uri_unique_data_capture(gsa_uri)
-	# 	inner_xquery              = gsa_uri.queries(false).map { |url_key, url_value| url_value = encode(url_value)
-	# 	".//*[count(.//@*[contains(.,'#{url_key}=#{url_value}')]) >=1 and count(parent::*//@*[contains(.,'#{url_key}=#{url_value}')]) < count(parent::*//@*[contains(.,'#{url_key}=')]) ]"
-	# 	}.join(' and ')
-	# 	xquery_uri_unique_parents = ".//*[#{inner_xquery}]"
-	# 	add_debug([xquery_uri_unique_parents, @doc.xpath(xquery_uri_unique_parents).count])
-	# 	@doc.xpath(xquery_uri_unique_parents).each { |uri_unique_parent| add_debug({ "#{gsa_uri.queries.to_s}" => uri_unique_parent.xpath('.//text()').text.strip.split(/\s{2,}/) })
-	# 	}
-	# end
-
-	def extract_table_transposed
-		@doc.search('//table[count(.//table)=0 and count(.//tr[1]//td)=2 and count(.//tr[last()]//td)=2]//tr[count(td)=2]').each do |row|
-			pair = row.search('td').map { |td| td.text.squeeze(' ').strip }
-			key  = to_column(pair[0])
-			unless pair[1].empty? || pair[1] == ' ' || key.nil? || key.empty?
-				key_pair = { key => soft_clean(pair[1]) }
-				ap key_pair
-				@data_array << key_pair
-			end
-			row.replace('')
-		end
-	end
-
-	def extract_each_line
-		kv        = {}
-		last_line = ''
-		str_doc   = @doc.to_str
-		str_doc.each_line do |line|
-			line = soft_clean(line)
-			if line
-				if last_line.end_with? ':'
-					kv[to_column(last_line.chomp(':'))] = line
-				end
-				last_line = line
-			end
-		end
-		ap kv
-		@data_array << kv
-	end
-
 	def as_column_name(key_string)
 		# my contr'actorList   \  my contractorList  \ my_contractorList \   my_contractor_list   \
 		key_string.to_s.gsub(/[^a-zA-Z0-9\s]/, "").gsub(/\s/, "_").gsub(/\B[A-Z][^A-Z]/, '_\&').downcase.squeeze("_").gsub(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/, "")
@@ -187,12 +101,6 @@ class DataFile
 
 	def to_column(dirty_string)
 		str = as_column_name(dirty_string)
-		str = nil if (str.empty?) || (str.equal?(' '))
-		str
-	end
-
-	def soft_clean(dirty_string)
-		str = dirty_string.gsub(/\s+/, ' ').strip
 		str = nil if (str.empty?) || (str.equal?(' '))
 		str
 	end
@@ -205,25 +113,6 @@ class DataFile
 			result << first
 		end
 		result
-	end
-
-	def collect_comments
-		out      = []
-		comments = @doc.xpath('.//body//comment()')
-		cols     = comments.map { |c| to_column(c.text)
-		}
-		comments.each { |c|
-			if c.text.downcase.include? 'end'
-				start_i = cols.find_index { |x| x == to_column(c.text.gsub(/(ends?)/i, '')) }
-				if start_i
-					comment = comments.at(start_i)
-					if comment && c
-						out << collect_between(comment, c)
-					end
-				end
-			end
-		}
-		out
 	end
 
 	def concat(datafile)
@@ -255,33 +144,6 @@ class DataFile
 		data_hash
 	end
 
-	def promote(selector)
-		@doc.xpath(selector).each { |node| @doc.at_xpath('//body').replace("<body>#{node}</body>")
-		}
-	end
-
-	def unwrap(selector)
-		@doc.search(selector).map { |node| txt = node.children.text.strip
-		node.replace('')
-		txt
-		}.uniq
-	end
-
-	def children_text_array(selector)
-		@doc.search(selector).map { |node| node.xpath('.//text()')
-		txt = node.children.text.strip
-		txt
-		}.uniq
-	end
-
-	def replace_wrap(selector, delimiter = ['', "\n"])
-		@doc.search(selector).each { |node| node.replace("#{delimiter[0]}#{node.children}#{delimiter[1]}") }
-	end
-
-	def add_data_array(data_array = [])
-		@data_array << data_array
-	end
-
 	def clean_data_array
 		@data_array.each { |inner_data_hash| inner_data_hash.delete_if { |k, v| DELETE_FROM_DATA_ARRAY.include? k
 		}
@@ -306,28 +168,10 @@ class DataFile
 		xp
 	end
 
-	def clean_nodes
-		remove_nodes = ['script', "[type='text/javascript']", "[type='text/css']", 'noscript', 'button', 'link', 'br', '#sectionheader', 'meta', 'style']
-		remove_nodes.each do |selector|
-			@doc.css("#{selector}").remove
-		end
-	end
-
-	def clean_attributes
-		remove_attributes = %w(colspan bgcolor size width height border nowrap align target cellspacing cellpadding width border valign bgcolor style class bordercolor color)
-		remove_attributes.each do |attribute|
-			@doc.xpath(".//@#{attribute}").remove
-		end
-	end
-
 	def collect_form_attributes
-		@doc.xpath('.//body//form//*[@value or @name or @action]').each { |element| @data_array << element.to_h
-		}
-	end
-
-	def extract_src
-		@doc.xpath('.//body//*[@src]').each { |element| @data_array << element.to_h
-		}
+		@doc.xpath('.//body//form//*[@value or @name or @action]').each do |element|
+			@data_array << { "collect_form_attributes": element.to_h }
+		end
 	end
 
 	def from_json(json)
@@ -342,19 +186,11 @@ class DataFile
 
 	def xml(html)
 		@doc = Nokogiri.parse(html)
-		# clean_document
-		# clean_attributes
-		print_header 'clean_nodes'
-		# clean_nodes
 		print_header 'extract_gsa_uri'
 		puts Benchmark.realtime { extract_uri_with_params }
-		# print_header 'table_transposed'
-		# extract_table_transposed
-		# print_header 'table data'
-		# print_header 'strip_doc'
-		extract_each_line
+
 		collect_form_attributes
-		extract_src
+
 		print_header 'clean_data_array'
 		# clean_data_array
 	end
