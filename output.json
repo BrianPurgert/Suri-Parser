@@ -1,0 +1,790 @@
+{
+  "url": "http://192.168.1.9/2017/100/PAGEproductdetaildo-GSIN11000047808129-CVIEWtrue-.html",
+  "keyName": {
+    "UNIT_DEFINITIONS": {
+      "url": [
+        "/advantage/contractor/contractor_detail.do?mapName=/catalog/product_detail&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA",
+        "javascript:openLargeImagesWindow('/advantage/catalog/photo_viewer.do')"
+      ],
+      "content": [
+        "Enlarge/More Views >>",
+        "$161.61",
+        "EA",
+        "sold and shipped by",
+        "GEM LASER EXPRESS",
+        "BX",
+        "1 BX",
+        "1"
+      ]
+    },
+    "SYMBOLS": {
+      "url": "/advantage/information/page.do?keyName=SYMBOLS",
+      "content": [
+        " ",
+        "BOARD,HP P3005,REF,NET,FM",
+        "Mfr Part No.:",
+        "IVRHP3005FBRDRE",
+        "Contractor Part No.:",
+        "UPC/ISBN/GTIN:",
+        "00848961003735",
+        "Manufacturer:",
+        "INNOVERA",
+        "Contract No.:",
+        "GS-02F-0237R(ends: Sep 28, 2020)",
+        "MAS Schedule/SIN:",
+        "75/75 200",
+        "Made In:",
+        "UNITED STATES OF AMERICA",
+        "Weight:",
+        "1.000 LB",
+        "Disaster Purchasing items",
+        "Desc",
+        "REFURBISHED NET FORM BOARD FOR HP P3005N, P3005DN, P3005X"
+      ]
+    },
+    "BUSINESS_IND": {
+      "url": "/advantage/information/page.do?keyName=BUSINESS_IND",
+      "content": [
+        "s",
+        "dv",
+        "d",
+        "8a",
+        "h",
+        "v",
+        "w"
+      ]
+    },
+    "FOB_DEFINITION": {
+      "url": "/advantage/information/page.do?keyName=FOB_DEFINITION",
+      "content": [
+        "D-CONUS/O-AK,PR,HI",
+        "D-CONUSND-AK,PR,HI",
+        "D-CONUS,AK,PR,HI"
+      ]
+    }
+  },
+  "uom": {
+    "#EA": {
+      "url": [
+        "/advantage/contractor/contractor_detail.do?mapName=/catalog/product_detail&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+        "/advantage/information/page.do?keyName=SYMBOLS",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA",
+        "javascript:openLargeImagesWindow('/advantage/catalog/photo_viewer.do')",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0237R/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-35F-0177P/i/SCS_PHOTO_12358291_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-35F-0177P&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0059Y/i/AESUPPLY_40x40.GIF&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0059Y&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0191V&itemNumber=IVRHP3005FBRDRE&mfrName=INVERA",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0087W&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0192S&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-14F-0001K&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0109U/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0109U&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0229R&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0007N&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0151S&itemNumber=IVRHP3005FBRDRE&mfrName=IVR",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-137BA/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-137BA&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA&bpaNumber=GS02Q14DCR0008"
+      ],
+      "content": [
+        " ",
+        "Enlarge/More Views >>",
+        "$161.61",
+        "EA",
+        "sold and shipped by",
+        "GEM LASER EXPRESS",
+        "BOARD,HP P3005,REF,NET,FM",
+        "Mfr Part No.:",
+        "IVRHP3005FBRDRE",
+        "Contractor Part No.:",
+        "UPC/ISBN/GTIN:",
+        "00848961003735",
+        "Manufacturer:",
+        "INNOVERA",
+        "Contract No.:",
+        "GS-02F-0237R(ends: Sep 28, 2020)",
+        "MAS Schedule/SIN:",
+        "75/75 200",
+        "Made In:",
+        "UNITED STATES OF AMERICA",
+        "Weight:",
+        "1.000 LB",
+        "Disaster Purchasing items",
+        "Desc",
+        "REFURBISHED NET FORM BOARD FOR HP P3005N, P3005DN, P3005X",
+        "s",
+        "dv",
+        "5 days delivered ARO",
+        "$50.00 ",
+        "D-CONUS/O-AK,PR,HI",
+        "$163.74",
+        "LUCILLE MAUD CORPORATION",
+        "d",
+        "8a",
+        "h",
+        "7 days delivered ARO",
+        "D-CONUSND-AK,PR,HI",
+        "$181.95",
+        "A&E SUPPLY",
+        "v",
+        "2 days delivered ARO",
+        "D-CONUS,AK,PR,HI",
+        "$218.34",
+        "AXISCORE LLC",
+        "3 days delivered ARO",
+        "$110.00 ",
+        "$220.16",
+        "1",
+        "CAPP, INC.",
+        "4 days delivered ARO",
+        "$30.00 ",
+        "$226.97",
+        "ARROW TEK, INC.",
+        "$239.65",
+        "ALPHA SUM BUSINESS MACHINES",
+        "10 days delivered ARO",
+        "$100.00 ",
+        "$242.60",
+        "ACORN OFFICE PRODUCTS",
+        "w",
+        "1 day delivered ARO",
+        "$49.00 ",
+        "SUPPLIES NOW",
+        "$247.49",
+        "CARTRIDGE SAVERS, INC.",
+        "$262.01",
+        "FEDERAL ACQUISITION CENTER, INC.",
+        "$262.08",
+        "MYOFFICEPRODUCTS"
+      ]
+    },
+    "#BX": {
+      "url": [
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0128P&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#BX"
+      ],
+      "content": [
+        " ",
+        "$209.24",
+        "BX",
+        "1 BX",
+        "3-VETS, INC",
+        "s",
+        "d",
+        "8a",
+        "dv",
+        "h",
+        "3 days delivered ARO",
+        "$100.00 ",
+        "D-CONUSND-AK,PR,HI"
+      ]
+    }
+  },
+  "contractNumber": {
+    "GS-02F-0237R": {
+      "url": [
+        "/advantage/contractor/contractor_detail.do?mapName=/catalog/product_detail&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+        "/advantage/information/page.do?keyName=SYMBOLS",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA",
+        "javascript:openLargeImagesWindow('/advantage/catalog/photo_viewer.do')",
+        "/advantage/catalog/product_detail.do?type=FOB&dir=asc&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+        "/advantage/catalog/product_detail.do?type=contractor&dir=asc&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+        "/advantage/catalog/product_detail.do?type=delivery&dir=asc&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+        "/advantage/catalog/product_detail.do?type=min&dir=asc&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+        "/advantage/catalog/product_detail.do?type=price&dir=asc&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0237R/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION"
+      ],
+      "content": [
+        " ",
+        "Enlarge/More Views >>",
+        "$161.61",
+        "EA",
+        "sold and shipped by",
+        "GEM LASER EXPRESS",
+        "BOARD,HP P3005,REF,NET,FM",
+        "Mfr Part No.:",
+        "IVRHP3005FBRDRE",
+        "Contractor Part No.:",
+        "UPC/ISBN/GTIN:",
+        "00848961003735",
+        "Manufacturer:",
+        "INNOVERA",
+        "Contract No.:",
+        "GS-02F-0237R(ends: Sep 28, 2020)",
+        "MAS Schedule/SIN:",
+        "75/75 200",
+        "Made In:",
+        "UNITED STATES OF AMERICA",
+        "Weight:",
+        "1.000 LB",
+        "Disaster Purchasing items",
+        "Desc",
+        "REFURBISHED NET FORM BOARD FOR HP P3005N, P3005DN, P3005X",
+        "Price/Unit",
+        "Features",
+        "Contractor",
+        "Socio",
+        "Green",
+        "Photo",
+        "Deliv Days",
+        "Min",
+        "FOB/Shipping",
+        "s",
+        "dv",
+        "5 days delivered ARO",
+        "$50.00 ",
+        "D-CONUS/O-AK,PR,HI"
+      ]
+    },
+    "GS-35F-0177P": {
+      "url": [
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-35F-0177P/i/SCS_PHOTO_12358291_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-35F-0177P&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$163.74",
+        "EA",
+        "LUCILLE MAUD CORPORATION",
+        "s",
+        "d",
+        "8a",
+        "h",
+        "7 days delivered ARO",
+        "$50.00 ",
+        "D-CONUSND-AK,PR,HI"
+      ]
+    },
+    "GS-02F-0059Y": {
+      "url": [
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0059Y/i/AESUPPLY_40x40.GIF&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0059Y&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$181.95",
+        "EA",
+        "A&E SUPPLY",
+        "s",
+        "v",
+        "2 days delivered ARO",
+        "$50.00 ",
+        "D-CONUS,AK,PR,HI"
+      ]
+    },
+    "GS-02F-0128P": {
+      "url": [
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0128P&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#BX"
+      ],
+      "content": [
+        " ",
+        "$209.24",
+        "BX",
+        "1 BX",
+        "3-VETS, INC",
+        "s",
+        "d",
+        "8a",
+        "dv",
+        "h",
+        "3 days delivered ARO",
+        "$100.00 ",
+        "D-CONUSND-AK,PR,HI"
+      ]
+    },
+    "GS-02F-0191V": {
+      "url": [
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0191V&itemNumber=IVRHP3005FBRDRE&mfrName=INVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$218.34",
+        "EA",
+        "AXISCORE LLC",
+        "s",
+        "d",
+        "8a",
+        "3 days delivered ARO",
+        "$110.00 ",
+        "D-CONUS/O-AK,PR,HI"
+      ]
+    },
+    "GS-02F-0087W": {
+      "url": [
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0087W&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$220.16",
+        "EA",
+        "1",
+        "CAPP, INC.",
+        "s",
+        "4 days delivered ARO",
+        "$30.00 ",
+        "D-CONUS,AK,PR,HI"
+      ]
+    },
+    "GS-02F-0192S": {
+      "url": [
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0192S&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$226.97",
+        "EA",
+        "ARROW TEK, INC.",
+        "s",
+        "d",
+        "3 days delivered ARO",
+        "$50.00 ",
+        "D-CONUS/O-AK,PR,HI"
+      ]
+    },
+    "GS-14F-0001K": {
+      "url": [
+        "/advantage/catalog/product_detail.do?contractNumber=GS-14F-0001K&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$239.65",
+        "EA",
+        "ALPHA SUM BUSINESS MACHINES",
+        "s",
+        "10 days delivered ARO",
+        "$100.00 ",
+        "D-CONUS/O-AK,PR,HI"
+      ]
+    },
+    "GS-02F-0109U": {
+      "url": [
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0109U/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0109U&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=SYMBOLS",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$242.60",
+        "EA",
+        "ACORN OFFICE PRODUCTS",
+        "s",
+        "w",
+        "1 day delivered ARO",
+        "$49.00 ",
+        "D-CONUS/O-AK,PR,HI"
+      ]
+    },
+    "GS-02F-0229R": {
+      "url": [
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0229R&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$242.60",
+        "EA",
+        "SUPPLIES NOW",
+        "s",
+        "5 days delivered ARO",
+        "$50.00 ",
+        "D-CONUS/O-AK,PR,HI"
+      ]
+    },
+    "GS-02F-0007N": {
+      "url": [
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0007N&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$247.49",
+        "EA",
+        "CARTRIDGE SAVERS, INC.",
+        "s",
+        "d",
+        "8a",
+        "3 days delivered ARO",
+        "$100.00 ",
+        "D-CONUS/O-AK,PR,HI"
+      ]
+    },
+    "GS-02F-0151S": {
+      "url": [
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0151S&itemNumber=IVRHP3005FBRDRE&mfrName=IVR",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$262.01",
+        "EA",
+        "FEDERAL ACQUISITION CENTER, INC.",
+        "s",
+        "w",
+        "2 days delivered ARO",
+        "$50.00 ",
+        "D-CONUS,AK,PR,HI"
+      ]
+    },
+    "GS-02F-137BA": {
+      "url": [
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-137BA/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-137BA&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA&bpaNumber=GS02Q14DCR0008",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$262.08",
+        "EA",
+        "MYOFFICEPRODUCTS",
+        "s",
+        "d",
+        "1 day delivered ARO",
+        "$100.00 ",
+        "D-CONUSND-AK,PR,HI"
+      ]
+    }
+  },
+  "type": {
+    "price": {
+      "url": "/advantage/catalog/product_detail.do?type=price&dir=asc&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+      "content": [
+        "Price/Unit"
+      ]
+    },
+    "contractor": {
+      "url": "/advantage/catalog/product_detail.do?type=contractor&dir=asc&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+      "content": [
+        "Contractor"
+      ]
+    },
+    "delivery": {
+      "url": "/advantage/catalog/product_detail.do?type=delivery&dir=asc&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+      "content": [
+        "Deliv Days"
+      ]
+    },
+    "min": {
+      "url": "/advantage/catalog/product_detail.do?type=min&dir=asc&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+      "content": [
+        "Min"
+      ]
+    },
+    "FOB": {
+      "url": "/advantage/catalog/product_detail.do?type=FOB&dir=asc&oid=1069651763&contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE",
+      "content": [
+        "FOB/Shipping"
+      ]
+    },
+    "source": {
+      "url": [
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0237R/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-35F-0177P/i/SCS_PHOTO_12358291_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-35F-0177P&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0059Y/i/AESUPPLY_40x40.GIF&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0059Y&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0109U/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0109U&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=SYMBOLS",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-137BA/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-137BA&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA&bpaNumber=GS02Q14DCR0008"
+      ],
+      "content": [
+        " ",
+        "$161.61",
+        "EA",
+        "GEM LASER EXPRESS",
+        "s",
+        "dv",
+        "5 days delivered ARO",
+        "$50.00 ",
+        "D-CONUS/O-AK,PR,HI",
+        "$163.74",
+        "LUCILLE MAUD CORPORATION",
+        "d",
+        "8a",
+        "h",
+        "7 days delivered ARO",
+        "D-CONUSND-AK,PR,HI",
+        "$181.95",
+        "A&E SUPPLY",
+        "v",
+        "2 days delivered ARO",
+        "D-CONUS,AK,PR,HI",
+        "$242.60",
+        "ACORN OFFICE PRODUCTS",
+        "w",
+        "1 day delivered ARO",
+        "$49.00 ",
+        "$262.08",
+        "MYOFFICEPRODUCTS",
+        "$100.00 "
+      ]
+    }
+  },
+  "path": {
+    "/images/products/GS-02F-0237R/i/244044_40x40.JPG": {
+      "url": [
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0237R/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$161.61",
+        "EA",
+        "GEM LASER EXPRESS",
+        "s",
+        "dv",
+        "5 days delivered ARO",
+        "$50.00 ",
+        "D-CONUS/O-AK,PR,HI"
+      ]
+    },
+    "/images/products/GS-35F-0177P/i/SCS_PHOTO_12358291_40x40.JPG": {
+      "url": [
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-35F-0177P/i/SCS_PHOTO_12358291_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-35F-0177P&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$163.74",
+        "EA",
+        "LUCILLE MAUD CORPORATION",
+        "s",
+        "d",
+        "8a",
+        "h",
+        "7 days delivered ARO",
+        "$50.00 ",
+        "D-CONUSND-AK,PR,HI"
+      ]
+    },
+    "/images/products/GS-02F-0059Y/i/AESUPPLY_40x40.GIF": {
+      "url": [
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0059Y/i/AESUPPLY_40x40.GIF&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0059Y&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$181.95",
+        "EA",
+        "A&E SUPPLY",
+        "s",
+        "v",
+        "2 days delivered ARO",
+        "$50.00 ",
+        "D-CONUS,AK,PR,HI"
+      ]
+    },
+    "/images/products/GS-02F-0109U/i/244044_40x40.JPG": {
+      "url": [
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0109U/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0109U&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=SYMBOLS",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$242.60",
+        "EA",
+        "ACORN OFFICE PRODUCTS",
+        "s",
+        "w",
+        "1 day delivered ARO",
+        "$49.00 ",
+        "D-CONUS/O-AK,PR,HI"
+      ]
+    },
+    "/images/products/GS-02F-137BA/i/244044_40x40.JPG": {
+      "url": [
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-137BA/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-137BA&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA&bpaNumber=GS02Q14DCR0008",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$262.08",
+        "EA",
+        "MYOFFICEPRODUCTS",
+        "s",
+        "d",
+        "1 day delivered ARO",
+        "$100.00 ",
+        "D-CONUSND-AK,PR,HI"
+      ]
+    }
+  },
+  "mfrName": {
+    "INNOVERA": {
+      "url": [
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0237R/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0237R&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-35F-0177P/i/SCS_PHOTO_12358291_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-35F-0177P&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0059Y/i/AESUPPLY_40x40.GIF&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0059Y&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0128P&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#BX",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0087W&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0192S&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-14F-0001K&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-0109U/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0109U&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/information/page.do?keyName=SYMBOLS",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0229R&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0007N&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA",
+        "/advantage/catalog/photo_viewer.do?path=/images/products/GS-02F-137BA/i/244044_40x40.JPG&type=source",
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-137BA&itemNumber=IVRHP3005FBRDRE&mfrName=INNOVERA&bpaNumber=GS02Q14DCR0008"
+      ],
+      "content": [
+        " ",
+        "$161.61",
+        "EA",
+        "GEM LASER EXPRESS",
+        "s",
+        "dv",
+        "5 days delivered ARO",
+        "$50.00 ",
+        "D-CONUS/O-AK,PR,HI",
+        "$163.74",
+        "LUCILLE MAUD CORPORATION",
+        "d",
+        "8a",
+        "h",
+        "7 days delivered ARO",
+        "D-CONUSND-AK,PR,HI",
+        "$181.95",
+        "A&E SUPPLY",
+        "v",
+        "2 days delivered ARO",
+        "D-CONUS,AK,PR,HI",
+        "$209.24",
+        "BX",
+        "1 BX",
+        "3-VETS, INC",
+        "3 days delivered ARO",
+        "$100.00 ",
+        "$220.16",
+        "1",
+        "CAPP, INC.",
+        "4 days delivered ARO",
+        "$30.00 ",
+        "$226.97",
+        "ARROW TEK, INC.",
+        "$239.65",
+        "ALPHA SUM BUSINESS MACHINES",
+        "10 days delivered ARO",
+        "$242.60",
+        "ACORN OFFICE PRODUCTS",
+        "w",
+        "1 day delivered ARO",
+        "$49.00 ",
+        "SUPPLIES NOW",
+        "$247.49",
+        "CARTRIDGE SAVERS, INC.",
+        "$262.08",
+        "MYOFFICEPRODUCTS"
+      ]
+    },
+    "INVERA": {
+      "url": [
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0191V&itemNumber=IVRHP3005FBRDRE&mfrName=INVERA",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$218.34",
+        "EA",
+        "AXISCORE LLC",
+        "s",
+        "d",
+        "8a",
+        "3 days delivered ARO",
+        "$110.00 ",
+        "D-CONUS/O-AK,PR,HI"
+      ]
+    },
+    "IVR": {
+      "url": [
+        "/advantage/catalog/product_detail.do?contractNumber=GS-02F-0151S&itemNumber=IVRHP3005FBRDRE&mfrName=IVR",
+        "/advantage/information/page.do?keyName=BUSINESS_IND",
+        "/advantage/information/page.do?keyName=FOB_DEFINITION",
+        "/advantage/information/page.do?keyName=UNIT_DEFINITIONS&uom=#EA"
+      ],
+      "content": [
+        " ",
+        "$262.01",
+        "EA",
+        "FEDERAL ACQUISITION CENTER, INC.",
+        "s",
+        "w",
+        "2 days delivered ARO",
+        "$50.00 ",
+        "D-CONUS,AK,PR,HI"
+      ]
+    }
+  }
+}
