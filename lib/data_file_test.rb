@@ -2,7 +2,7 @@ require 'ferrum'
 require 'json'
 require_relative 'data_file'
 
-test_url = 'http://192.168.1.9/2017/100/PAGEproductdetaildo-GSIN11000047808129-CVIEWtrue-.html'
+test_url = 'https://www.gsaelibrary.gsa.gov/ElibMain/scheduleSummary.do?scheduleNumber=MAS'
 
 browser_options = {
 'no-sandbox'                                         => nil,
@@ -55,4 +55,6 @@ body     = browser.page.body.to_s
 datafile = DataFile.new(body, test_url)
 
 File.open("output.json", "w") { |f| f.write(JSON.pretty_generate(datafile.to_h)) }
+
+ap datafile.to_h
 browser.quit

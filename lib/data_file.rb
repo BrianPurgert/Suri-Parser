@@ -6,24 +6,21 @@ require 'benchmark'
 require 'amazing_print'
 require 'deep_merge'
 # Heuristic HTML Parser
-DELETE_FROM_DATA_ARRAY = [' ', ''].freeze
 
 class DataFile
-	# @param [String] html
-	# @param [String] url
-	# @param [String] content_type
+
 	def initialize(html, url, content_type = nil)
-		@time       = Time.now
-		@url        = Addressable::URI.parse(url).normalize
-		@links      = []
-		@data_array = [{ url: @url.to_s }]
-		@dom_uri    = {}
+		@time = Time.now
+		@url  = Addressable::URI.parse(url).normalize
+
+		@data_array = []
 		@debug      = []
 		@xpaths     = []
 		xml(html)
 	end
 
 	def parse_xp_node(xp_node)
+		puts xp_node
 		urls = xp_node.xpath('.//@href').map { |a| a.to_s }.compact.uniq.sort!
 		urls = urls.first unless urls.size > 1
 		out  = { url: urls }
@@ -141,13 +138,7 @@ class DataFile
 			#   :merge_debug            DEFAULT: false      Set to true to get console output of merge process for debugging
 			data_hash.deep_merge(h, sort_merged_arrays: false, merge_hash_arrays: false)
 		}
-		data_hash
-	end
-
-	def clean_data_array
-		@data_array.each { |inner_data_hash| inner_data_hash.delete_if { |k, v| DELETE_FROM_DATA_ARRAY.include? k
-		}
-		}
+		{ @url.to_s.to_sym => data_hash }
 	end
 
 	def count(attribute)
@@ -186,12 +177,9 @@ class DataFile
 
 	def xml(html)
 		@doc = Nokogiri.parse(html)
-		print_header 'extract_gsa_uri'
 		puts Benchmark.realtime { extract_uri_with_params }
 
-		collect_form_attributes
-
-		print_header 'clean_data_array'
+		# collect_form_attributes
 		# clean_data_array
 	end
 end

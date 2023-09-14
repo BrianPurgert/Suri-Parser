@@ -2,14 +2,13 @@
 DELETE_FROM_DATA_ARRAY: ::Array["" | ""]
 
 class DataFile
+	@data_array: ::Array[::Array[::String]]
+	@doc: Nokogiri::XML::Document
 	@xpath_data_queue: Thread::Queue
 
 	@xpaths: Array[string]
 
-	# @param [String] html
-	# @param [String] url
-	# @param [String] content_type
-	def initialize: (untyped html, untyped url, ?untyped? content_type) -> void
+	def initialize: (String html, String url, ?untyped? content_type) -> void
 
 	def elapsed: () -> untyped
 
@@ -66,7 +65,7 @@ class DataFile
 
 	def clean_data_array: () -> untyped
 
-	def count: (untyped attribute) -> ::String
+	def count: (string attribute) -> ::String
 
 	def countp: (untyped attribute) -> ::String
 

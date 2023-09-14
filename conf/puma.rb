@@ -5,7 +5,7 @@ puts @dir
 # @dir = '/home/pi/roda/plug-control/'
 
 # Set workers equal to CPU core count
-workers Etc.nprocessors
+# 	workers Etc.nprocessors
 
 # Min and Max threads per worker
 threads 1, 4

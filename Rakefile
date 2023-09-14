@@ -5,8 +5,12 @@ task :run, [:port] do |_, args|
 	sh "puma config.ru -p #{args.port}"
 end
 
-# Set :run as the default task
-task default: :run
+# print available tasks as the default task
+task :default do |_|
+	Rake::Task.tasks.each do |task|
+		puts task.name
+	end
+end
 
 desc 'Start the puma server'
 task :puma do |_|
