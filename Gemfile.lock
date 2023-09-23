@@ -1,0 +1,55 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.8.5)
+      public_suffix (>= 2.0.2, < 6.0)
+    amazing_print (1.5.0)
+    colorize (1.1.0)
+    concurrent-ruby (1.2.2)
+    deep_merge (1.2.2)
+    ferrum (0.13)
+      addressable (~> 2.5)
+      concurrent-ruby (~> 1.1)
+      webrick (~> 1.7)
+      websocket-driver (>= 0.6, < 0.8)
+    json (2.6.3)
+    nio4r (2.5.9)
+    nokogiri (1.15.4-x64-mingw-ucrt)
+      racc (~> 1.4)
+    public_suffix (5.0.3)
+    puma (6.3.1)
+      nio4r (~> 2.0)
+    racc (1.7.1)
+    rack (3.0.8)
+    rack-unreloader (2.1.0)
+    rake (13.0.6)
+    roda (3.71.0)
+      rack
+    tilt (2.2.0)
+    webrick (1.8.1)
+    websocket-driver (0.7.6)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.5)
+
+PLATFORMS
+  x64-mingw-ucrt
+
+DEPENDENCIES
+  addressable
+  amazing_print
+  bundler
+  colorize
+  deep_merge
+  ferrum
+  json
+  nokogiri
+  puma
+  rack
+  rack-unreloader
+  rake
+  roda
+  tilt
+  webrick
+
+BUNDLED WITH
+   2.4.19
