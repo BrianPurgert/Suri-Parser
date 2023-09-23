@@ -1,9 +1,8 @@
-# roda-template-simple
+# Heuristic HTML parser
 
-Roda Template for a Small Application
-
-Reference directory structure
-from [Roda Conventions](http://roda.jeremyevans.net/rdoc/files/doc/conventions_rdoc.html#label-Small+Applications)
+it uses query key/values found in urls on the page to try to retrieve the most relevant content
+this is the API backend found at https://getthis.page/api?url=https://www.example.com
+the front end can be found at https://turingsinterface.com/
 
 Run the application
 Adds the optional [rack-unreloader](https://github.com/jeremyevans/rack-unreloader) gem for hot reloading after code

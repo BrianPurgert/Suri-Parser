@@ -61,23 +61,25 @@ class DataFile
 			import_q = dirty_h
 			queries.update(import_q) { |k, v1, v2| Array(v1) | Array(v2) }
 		end
-		ap queries
+		# ap queries
 		@xpaths           = queries
 		@xpath_data_queue = Queue.new
 		xpath_threads     = []
 		puts "queries: #{ queries.size }"
 		queries.each_pair do |k, a|
-			xpath_threads << Thread.new(@doc) { |doc_copy| a = (a.is_a? Array) ? a : Array(a)
-			a.each do |v|
-				xp       = kv_xpath(k, v)
-				xp_nodes = doc_copy.xpath(xp)
-				unless xp_nodes.nil?
-					xp_nodes.each { |xp_node| pxn = parse_xp_node(xp_node)
-					kv_node                       = { k => { decode(v) => pxn } }
-					@xpath_data_queue << kv_node
-					}
+			xpath_threads << Thread.new(@doc) { |doc_copy|
+				a = (a.is_a? Array) ? a : Array(a)
+				a.each do |v|
+					xp       = kv_xpath(k, v)
+					xp_nodes = doc_copy.xpath(xp)
+					unless xp_nodes.nil?
+						xp_nodes.each { |xp_node|
+							pxn     = parse_xp_node(xp_node)
+							kv_node = { k => { decode(v) => pxn } }
+							@xpath_data_queue << kv_node
+						}
+					end
 				end
-			end
 			}
 		end
 		xpath_threads.each { |thread| thread.join }
@@ -125,8 +127,6 @@ class DataFile
 	end
 
 	def to_h
-		puts '--------'.colorize(:red)
-		ap @xpaths
 		data_hash = {}
 		@data_array.each { |h| #   :preserve_unmergeables  DEFAULT: false      Set to true to skip any unmergeable elements from source
 			#   :knockout_prefix        DEFAULT: nil        Set to string value to signify prefix which deletes elements from existing element
