@@ -10,9 +10,9 @@ gem 'colorize'
 gem 'ferrum'
 gem 'amazing_print'
 gem 'deep_merge'
-gem 'rack-unreloader'
 gem 'webrick'
 gem 'rack'
 gem 'tilt'
-
+gem 'rerun'
+gem 'rack-unreloader'
 

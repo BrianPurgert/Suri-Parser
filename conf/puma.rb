@@ -17,11 +17,12 @@ state_path "#{@dir}tmp/pids/state"
 
 # Define SSL bindings and certificates
 ssl_bind '0.0.0.0', '443', {
-key:  '/etc/letsencrypt/live/getthis.page/privkey.pem',
-cert: '/etc/letsencrypt/live/getthis.page/fullchain.pem'
+  key:  '/etc/letsencrypt/live/getthis.page/privkey.pem',
+  cert: '/etc/letsencrypt/live/getthis.page/fullchain.pem'
 }
 
 # Define log file paths
-stdout_redirect "#{@dir}log/puma.stderr.log", "#{@dir}log/puma.stdout.log", true
+# stdout_redirect "#{@dir}log/puma.stderr.log", "#{@dir}log/puma.stdout.log", true
 
 activate_control_app
+

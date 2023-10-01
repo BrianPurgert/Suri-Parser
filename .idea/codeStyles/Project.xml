@@ -1,11 +1,6 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
     <option name="AUTODETECT_INDENTS" value="true" />
-    <CssCodeStyleSettings>
-      <option name="VALUE_ALIGNMENT" value="1" />
-      <option name="KEEP_SINGLE_LINE_BLOCKS" value="true" />
-      <option name="ALIGN_CLOSING_BRACE_WITH_PROPERTIES" value="true" />
-    </CssCodeStyleSettings>
     <DBN-PSQL>
       <case-options enabled="true">
         <option name="KEYWORD_CASE" value="lower" />
@@ -34,55 +29,19 @@
       <option name="WRAP_ON_TYPING" value="0" />
       <option name="RIGHT_MARGIN" value="72" />
     </MarkdownNavigatorCodeStyleSettings>
-    <Ruby>
-      <option name="INDENT_PRIVATE_METHODS" value="true" />
-      <option name="INDENT_PROTECTED_METHODS" value="true" />
-      <option name="INDENT_PUBLIC_METHODS" value="true" />
-      <option name="INDENT_WHEN_CASES" value="true" />
-    </Ruby>
     <TypeScriptCodeStyleSettings version="0">
-      <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
-      <option name="FORCE_SEMICOLON_STYLE" value="true" />
-      <option name="FORCE_QUOTE_STYlE" value="true" />
-      <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
+      <option name="ALIGN_OBJECT_PROPERTIES" value="2" />
+      <option name="ALIGN_VAR_STATEMENTS" value="2" />
       <option name="SPACES_WITHIN_IMPORTS" value="true" />
+      <option name="ALIGN_IMPORTS" value="true" />
+      <option name="ALIGN_UNION_TYPES" value="true" />
     </TypeScriptCodeStyleSettings>
-    <VueCodeStyleSettings>
-      <option name="UNIFORM_INDENT" value="false" />
-    </VueCodeStyleSettings>
-    <codeStyleSettings language="CSS">
-      <option name="KEEP_BLANK_LINES_IN_CODE" value="0" />
-      <arrangement>
-        <rules>
-          <section>
-            <rule>
-              <match>
-                <NAME>.*</NAME>
-              </match>
-              <order>BY_NAME</order>
-            </rule>
-          </section>
-        </rules>
-      </arrangement>
-    </codeStyleSettings>
-    <codeStyleSettings language="SCSS">
-      <arrangement>
-        <rules>
-          <section>
-            <rule>
-              <match>
-                <NAME>.*</NAME>
-              </match>
-              <order>BY_NAME</order>
-            </rule>
-          </section>
-        </rules>
-      </arrangement>
-    </codeStyleSettings>
-    <codeStyleSettings language="ruby">
-      <indentOptions>
-        <option name="CONTINUATION_INDENT_SIZE" value="0" />
-      </indentOptions>
+    <codeStyleSettings language="TypeScript">
+      <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
+      <option name="ALIGN_MULTILINE_TERNARY_OPERATION" value="true" />
+      <option name="ALIGN_MULTILINE_EXTENDS_LIST" value="true" />
+      <option name="ALIGN_MULTILINE_ARRAY_INITIALIZER_EXPRESSION" value="true" />
+      <option name="WRAP_ON_TYPING" value="0" />
     </codeStyleSettings>
   </code_scheme>
 </component>
