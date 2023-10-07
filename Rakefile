@@ -1,5 +1,5 @@
 def start_server(background: false)
-    cmd = 'bundle exec rerun -- puma -C ./conf/puma.rb'
+    cmd = 'puma -C ./conf/puma.rb'
     cmd += ' &' if background
     sh cmd
 end
@@ -13,10 +13,9 @@ end
 task(:default) { puts `rake -T` }
 
 desc 'run dev'
-task :dev, [:port] do |_, args|
-    puts 'Starting server'
-    args.with_defaults(port: 80)
-    sh "puma -C ./conf/puma.rb -p #{args.port}"
+task :dev do |_|
+    puts 'run dev'
+    sh "bundle exec rerun -- puma -C ./conf/puma.rb"
 end
 
 desc 'Start the puma server'

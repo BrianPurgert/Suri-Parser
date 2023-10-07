@@ -17,6 +17,11 @@
             <mapping deploy="turingsinterface" local="$PROJECT_DIR$/../../Projects/turingsinterface" web="/" />
             <mapping local="$PROJECT_DIR$/../monday_scripts" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/log" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.gem_rbs_collection" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>

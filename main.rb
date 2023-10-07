@@ -13,6 +13,8 @@ class Main < Roda
     plugin :render
     plugin :request_headers
     plugin :public
+    plugin :exception_page
+    plugin(:error_handler) { |e| exception_page e, json: true }
 
     route do |r|
         response['Access-Control-Allow-Origin'] = '*'
@@ -46,11 +48,13 @@ class Main < Roda
         end
 
         r.on 'api' do
+
             test_url = r.params['url'].nil? ? SAMPLE_URL : r.params['url']
 
             test_url = Addressable::URI.unencode(test_url.tr("+", " "))
             url      = Addressable::URI.heuristic_parse(test_url).normalize.to_s
-            body     = fetch_body(url)
+
+            body = fetch_body(url)
 
             datafile = DataFile.new(body, url)
             datafile.to_h

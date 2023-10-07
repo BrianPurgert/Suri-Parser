@@ -1,9 +1,8 @@
 # Set the application directory
-@dir = File.expand_path("../..", __FILE__) + '/'
-puts @dir
+@dir = File.join(File.expand_path('../..', __FILE__), '/')
 
 # Define workers for concurrency
-# RUBY_ENGINE == 'truffleruby' ? workers 1 : workers Etc.nprocessors
+workers (['truffleruby', 'jruby'].include? RUBY_ENGINE) ? 1 : Etc.nprocessors
 
 # Define threads for workers
 threads 1, 12
@@ -22,7 +21,7 @@ ssl_bind '0.0.0.0', '443', {
 }
 
 # Define log file paths
-# stdout_redirect "#{@dir}log/puma.stderr.log", "#{@dir}log/puma.stdout.log", true
+# stdout_redirect "#{@dir}log/puma.stderr.log", "#{@dir}log/puma.stdout.log", false
 
 activate_control_app
 

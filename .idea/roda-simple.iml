@@ -40,13 +40,12 @@
     <option name="myRootTask">
       <RakeTaskImpl id="rake">
         <subtasks>
-          <RakeTaskImpl description="run dev" fullCommand="dev[port]" id="dev[port]" />
+          <RakeTaskImpl description="run dev" fullCommand="dev" id="dev" />
           <RakeTaskImpl description="Kill Puma server" fullCommand="kys" id="kys" />
           <RakeTaskImpl description="Start the puma server" fullCommand="puma" id="puma" />
           <RakeTaskImpl description="Start the puma server in the background" fullCommand="pumad" id="pumad" />
           <RakeTaskImpl description="Restart puma server" fullCommand="restart" id="restart" />
           <RakeTaskImpl description="" fullCommand="default" id="default" />
-          <RakeTaskImpl description="" fullCommand="dev" id="dev" />
         </subtasks>
       </RakeTaskImpl>
     </option>

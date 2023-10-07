@@ -1,7 +1,6 @@
 .env
-Gemfile.lock
 
 .vscode
-!/Gemfile.lock
-/log/
-/tmp/pids/
+/log/**
+/tmp/pids/**
+/screenshots/*
