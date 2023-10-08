@@ -1,26 +1,23 @@
-def start_server(background: false)
-    cmd = 'puma -C ./conf/puma.rb'
-    cmd += ' &' if background
-    sh cmd
-end
-
 def kill_server
-    pid = File.read('./tmp/pids/puma.pid').strip
-    puts "Killing process with pid #{pid}"
-    Process.kill('TERM', pid.to_i)
-end
+    pid_file_path = './tmp/pids/puma.pid'
+    if File.exist?(pid_file_path)
+        pid = File.read(pid_file_path).strip
+        puts "Killing process with pid #{pid}"
+        Process.kill('TERM', pid.to_i)
+    else
+        puts "PID file does not exist"
+    end
 
-task(:default) { puts `rake -T` }
-
-desc 'run dev'
-task :dev do |_|
-    puts 'run dev'
-    sh "bundle exec rerun -- puma -C ./conf/puma.rb"
-end
-
-desc 'Start the puma server'
-task :puma do |_|
-    start_server
+    # Kill processes using port 80
+    port_80_processes = `lsof -i :80 -t`.split("\n")
+    port_80_processes.each do |pid|
+        puts "Killing process with pid #{pid} on port 80"
+        Process.kill('TERM', pid.to_i)
+    rescue Errno::ESRCH
+        puts "Process #{pid} does not exist"
+    rescue Errno::EPERM
+        puts "Insufficient permissions to kill process #{pid}"
+    end
 end
 
 desc 'Start the puma server in the background'
@@ -41,4 +38,18 @@ desc 'Kill Puma server'
 task :kys do |_|
     kill_server
 end
+
+task(:default) { puts `rake -T` }
+
+desc 'run dev'
+task :dev do |_|
+    sh "rerun -- puma -C ./conf/puma.rb"
+end
+
+desc 'Start the puma server'
+task :puma do |_|
+    start_server
+end
+
+
 
