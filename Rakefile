@@ -20,6 +20,14 @@ def kill_server
     end
 end
 
+PUMA_C = 'puma -C ./conf/puma.rb'
+
+def start_server(background: false)
+    cmd = PUMA_C
+    cmd += ' &' if background
+    sh cmd
+end
+
 desc 'Start the puma server in the background'
 task :pumad do |_|
     start_server(background: true)
@@ -43,7 +51,7 @@ task(:default) { puts `rake -T` }
 
 desc 'run dev'
 task :dev do |_|
-    sh "rerun -- puma -C ./conf/puma.rb"
+    sh "rerun -- #{PUMA_C}"
 end
 
 desc 'Start the puma server'

@@ -1,4 +1,4 @@
-# Heuristic HTML parser
+# Heuristic reverse parser
 
 it uses query key/values found in urls on the page to try to retrieve the most relevant content
 this is the API backend found at https://getthis.page/api?url=https://www.example.com
@@ -25,9 +25,10 @@ Includes puma to run the process as a daemon process in the background
 
 ## How to run
 
+- run `bundle exec puma -C ./conf/puma.rb` from project root
 - Run the `rake run` command to start the server in development mode with hot reloading active
 - Connect to the server at port [`:9292`](http://localhost:9292) and you should see a "Hello World" response
-
+  
 ## Additional rake tasks
 
 - `run` - Command `rake run[port_number]`

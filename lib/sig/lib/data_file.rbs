@@ -1,87 +1,43 @@
-# Heuristic HTML Parser
-DELETE_FROM_DATA_ARRAY: ::Array["" | ""]
-
 class DataFile
-	@data_array: ::Array[::Array[::String]]
-	@doc: Nokogiri::XML::Document
-	@xpath_data_queue: Thread::Queue
+  def initialize: (String, String, String?) -> void
 
-	@xpaths: Array[string]
+  def parse_xp_node: (untyped) -> Hash[Symbol, untyped]
 
-	def initialize: (String html, String url, ?untyped? content_type) -> void
+  def decode: (String) -> String
 
-	def elapsed: () -> untyped
+  def extract_uri_with_params: () -> void
 
-	def links: () -> untyped
+  def add_debug: (untyped) -> void
 
-	def having: (untyped attributes) -> untyped
+  def collect_between: (untyped, untyped) -> Array[untyped]
 
-	def `⏱`: () -> Float
+  def concat: (DataFile) -> void
 
-	def parse_xp_node: (untyped xp_node) -> untyped
+  def to_a: () -> Array[untyped]
 
-	def decode: (untyped encoded) -> untyped
+  def to_e: () -> Array[untyped]
 
-	def extract_uri_with_params: () -> untyped
+  def to_h: () -> Hash[Symbol, untyped]
 
-	def add_debug: (untyped info) -> untyped
+  def count: (String) -> String
 
-	# @param [Addressable::URI] gsa_uri
-	def unique_value_dom_grouping: (untyped gsa_uri) -> untyped
+  def countp: (String) -> String
 
-	def uri_unique_data_capture: (untyped gsa_uri) -> untyped
+  def kv_xpath: (String, String) -> String
 
-	def extract_table_transposed: () -> untyped
+  def collect_form_attributes: () -> void
 
-	def extract_each_line: () -> untyped
+  def xml: (String) -> void
 
-	def as_column_name: (untyped key_string) -> untyped
+  BROWSER_OPTIONS: Hash[String, untyped]
 
-	def to_column: (untyped dirty_string) -> untyped
+  def fetch_body: (String) -> String
+end
 
-	def soft_clean: (untyped dirty_string) -> untyped
+class Main
+  def parse_and_normalize_url: (String?) -> Addressable::URI
 
-	def collect_between: (untyped first, untyped last) -> untyped
+  def rewrite_urls_in_document: (Nokogiri::HTML::Document, Addressable::URI) -> Nokogiri::HTML::Document
 
-	def collect_comments: () -> untyped
-
-	def concat: (untyped datafile) -> untyped
-
-	def to_a: () -> untyped
-
-	def to_e: () -> untyped
-
-	def to_h: () -> untyped
-
-	def promote: (untyped selector) -> untyped
-
-	def unwrap: (untyped selector) -> untyped
-
-	def children_text_array: (untyped selector) -> untyped
-
-	def replace_wrap: (untyped selector, ?::Array[untyped] delimiter) -> untyped
-
-	def add_data_array: (?untyped data_array) -> untyped
-
-	def clean_data_array: () -> untyped
-
-	def count: (string attribute) -> ::String
-
-	def countp: (untyped attribute) -> ::String
-
-	def kv_xpath: (untyped k, untyped v) -> untyped
-
-	def clean_nodes: () -> untyped
-
-	def clean_attributes: () -> untyped
-
-	def collect_form_attributes: () -> untyped
-
-	def extract_src: () -> untyped
-
-	def from_json: (untyped json) -> untyped
-
-	def print_header: (untyped heading) -> untyped
-
-	def xml: (untyped html) -> untyped
+  def save_response_as_json: (Hash[Symbol, untyped], Addressable::URI) -> void
 end

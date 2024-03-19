@@ -7,11 +7,9 @@ require 'amazing_print'
 require 'deep_merge'
 
 class DataFile
-
     def initialize(html, url, content_type = nil)
         @time = Time.now
         @url  = Addressable::URI.parse(url).normalize
-
         @data_array = []
         @debug      = []
         @xpaths     = []
@@ -19,7 +17,7 @@ class DataFile
     end
 
     def parse_xp_node(xp_node)
-        # puts xp_node
+        # logger.info "#{xp_node}"
         urls = xp_node.xpath('.//@href').map { |a| a.to_s }.compact.uniq.sort!
         urls = urls.first unless urls.size > 1
         out  = { url: urls }
@@ -146,15 +144,9 @@ class DataFile
         end
     end
 
-    def from_json(json)
-        # symbolize_names: true
-        @data_array << JSON.parse(json).to_h
-    end
-
     def xml(html)
         @doc = Nokogiri.parse(html)
         puts Benchmark.realtime { extract_uri_with_params }
-
     end
 end
 

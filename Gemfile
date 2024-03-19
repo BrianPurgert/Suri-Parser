@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 gem 'roda'
 gem 'rake'
+gem 'openssl'
 gem 'puma'
 gem 'bundler'
 gem 'nokogiri'
@@ -10,9 +11,12 @@ gem 'colorize'
 gem 'ferrum'
 gem 'amazing_print'
 gem 'deep_merge'
-gem 'webrick'
 gem 'rack'
 gem 'tilt'
 gem 'rerun'
 gem 'rack-unreloader'
+gem 'localhost'
+gem 'base64'
+gem 'ffi'
+
 
