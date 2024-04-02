@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../ai_mouse/.idea/ai_mouse.iml" filepath="$PROJECT_DIR$/../ai_mouse/.idea/ai_mouse.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../auto_click/.idea/auto_click.iml" filepath="$PROJECT_DIR$/../auto_click/.idea/auto_click.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../monday_scripts/.idea/monday_scripts.iml" filepath="$PROJECT_DIR$/../monday_scripts/.idea/monday_scripts.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../Projects/Personal-Website/.idea/nuxt3-vuetify3.iml" filepath="$PROJECT_DIR$/../../Projects/Personal-Website/.idea/nuxt3-vuetify3.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/roda-simple.iml" filepath="$PROJECT_DIR$/.idea/roda-simple.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../Projects/turingsinterface/.idea/turingsinterface.iml" filepath="$PROJECT_DIR$/../../Projects/turingsinterface/.idea/turingsinterface.iml" />
     </modules>
   </component>
 </project>

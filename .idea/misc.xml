@@ -3,4 +3,7 @@
   <component name="ExtraIconsSettingsProject">
     <option name="ignoredPattern" value="" />
   </component>
+  <component name="RbsRubysigsRootManager">
+    <isRbsGemPresent>true</isRbsGemPresent>
+  </component>
 </project>

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Google Cloud Ubuntu" persistUploadOnCheckin="false" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="darchery  sftp" deleteMissingItems="true" createEmptyFolders="true" persistUploadOnCheckin="false" confirmBeforeUploading="false" autoUploadExternalChanges="true" compareModeInSync="SIZE">
     <option name="confirmBeforeUploading" value="false" />
     <serverData>
-      <paths name="Google Cloud Root">
+      <paths name="darchery">
         <serverdata>
           <mappings>
-            <mapping local="" />
+            <mapping deploy="\" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="Google Cloud Ubuntu">
+      <paths name="darchery  sftp">
         <serverdata>
           <mappings>
-            <mapping deploy="roda-simple" local="$PROJECT_DIR$" web="/" />
-            <mapping deploy="turingsinterface" local="$PROJECT_DIR$/../../Projects/turingsinterface" web="/" />
-            <mapping local="$PROJECT_DIR$/../monday_scripts" />
+            <mapping deploy="/C:/AppDev/inetpub" local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/log" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.gem_rbs_collection" />
-          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="gcloud">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/roda-simple" local="$PROJECT_DIR$" web="/" />
+          </mappings>
         </serverdata>
       </paths>
     </serverData>
